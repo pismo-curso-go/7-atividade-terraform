@@ -1,28 +1,10 @@
-# Terraform state files
 *.tfstate
 *.tfstate.*
 *.backup
 
-# Crash log files
-crash.log
-
-# .terraform directory (plugins, modules, etc)
 .terraform/
-
-# Terraform plan files
 *.tfplan
 plan.out
 
-# Sensitive files
-*.pem
-*.key
-
-# IDE/Editor files
 .vscode/
 .idea/
-*.swp
-*.swo
-
-# OS files
-.DS_Store
-Thumbs.db
