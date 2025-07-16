@@ -9,6 +9,21 @@ data "aws_subnets" "default" {
   }
 }
 
+data "aws_ami" "amazon_linux" {
+  most_recent = true
+  owners      = ["amazon"]
+
+  filter {
+    name   = "name"
+    values = ["amzn2-ami-hvm-*-x86_64-gp2"]
+  }
+
+  filter {
+    name   = "virtualization-type"
+    values = ["hvm"]
+  }
+}
+
 resource "aws_security_group" "ec2_sg" {
   name_prefix = "ec2-sg-"
   vpc_id      = data.aws_vpc.default.id
@@ -47,7 +62,7 @@ resource "aws_security_group" "ec2_sg" {
 }
 
 resource "aws_instance" "main" {
-  ami           = var.ami_id
+  ami           = data.aws_ami.amazon_linux.id
   instance_type = var.instance_type
   subnet_id     = data.aws_subnets.default.ids[0]
   

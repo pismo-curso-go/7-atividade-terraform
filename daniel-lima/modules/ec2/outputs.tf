@@ -1,3 +1,8 @@
+output "ami_id" {
+  description = "ID da AMI utilizada"
+  value       = data.aws_ami.amazon_linux.id
+}
+
 output "instance_id" {
   description = "ID da instância EC2"
   value       = aws_instance.main.id

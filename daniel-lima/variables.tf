@@ -4,10 +4,10 @@ variable "aws_region" {
   default     = "us-east-1"
 }
 
-variable "ec2_ami_id" {
-  description = "AMI ID para a instância EC2"
+variable "aws_profile" {
+  description = "Profile AWS para autenticação"
   type        = string
-  default     = "ami-0c55b159cbfafe1f0"
+  default     = "default"
 }
 
 variable "ec2_instance_type" {

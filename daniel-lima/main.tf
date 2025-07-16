@@ -9,13 +9,13 @@ terraform {
 }
 
 provider "aws" {
-  region = var.aws_region
+  region  = var.aws_region
+  profile = var.aws_profile
 }
 
 module "ec2_instance" {
   source = "./modules/ec2"
   
-  ami_id        = var.ec2_ami_id
   instance_type = var.ec2_instance_type
   instance_name = var.ec2_instance_name
   
