@@ -3,11 +3,6 @@ variable "region" {
   default     = "us-east-1"
 }
 
-variable "ec2_ami" {
-  description = "AMI ID for EC2"
-  default     = "ami-0c55b159cbfafe1f0"
-}
-
 variable "ec2_instance_type" {
   description = "EC2 instance type"
   default     = "t2.micro"

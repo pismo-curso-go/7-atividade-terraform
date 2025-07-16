@@ -1,6 +1,5 @@
 module "ec2" {
   source        = "./modules/ec2"
-  ami           = var.ec2_ami
   instance_type = var.ec2_instance_type
   name          = var.ec2_tag_name
 }
